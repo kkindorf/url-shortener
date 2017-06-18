@@ -31,6 +31,7 @@ app.get('/new/*', function(req, res, next) {
           console.log(err)
         }
         var newNumber = results.length;
+        console.log(newNumber)
         Url.create({
           originalUrl: userUrl,
           uniqueNumber: newNumber
@@ -39,7 +40,7 @@ app.get('/new/*', function(req, res, next) {
             return res.status(500).json({message: err})
           }
           else {
-            return res.status(201).json({url: port+'/'+newNumber})
+            return res.status(201).json({item: item})
           }
 
         })
