@@ -42,7 +42,7 @@ app.get('/new/*', function(req, res, next) {
             return res.status(500).json({message: err})
           }
           else {
-            return res.status(201).json({originalUrl: originalUrl, short_url: host+'/'+uniqueNumber})
+            return res.status(201).json({originalUrl: userUrl, short_url: host+'/'+uniqueNumber})
           }
 
         })
