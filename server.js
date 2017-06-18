@@ -54,7 +54,7 @@ app.get('/new/*', function(req, res, next) {
   })
   app.get('/:uniqueNumber', function(req, res, next) {
     var uniqueNumber = req.params.uniqueNumber;
-    Url.findOne({newUrl: uniqueNumber}, function(err, item) {
+    Url.findOne({uniqueNumber: uniqueNumber}, function(err, item) {
       if(err) {
         return res.status(500).json({message: 'This is not a valid entry please try again'})
       }
