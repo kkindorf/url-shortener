@@ -6,8 +6,8 @@ var Url = require('./models/url');
 var config = require('./config');
 
 mongoose.connect(config.DATABASE_URL);
-console.log(config.DATABASE_URL)
 var db = mongoose.connection;
+console.log(db)
 
 db.on('error', console.error.bind(console, 'connection error: We are not connected Scotty!'));
 db.once('open', function() {
