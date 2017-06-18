@@ -39,6 +39,7 @@ app.get('/new/*', function(req, res, next) {
             return res.status(500).json({message: err})
           }
           else {
+
             return res.status(201).json({url: port+'/'+newNumber})
           }
 
@@ -47,7 +48,7 @@ app.get('/new/*', function(req, res, next) {
 
     }
     else {
-      return res.status(500).json({message: 'You passed an invalid url as a parameter. Try again.'})
+      return res.status(500).json({message: 'You passed an invalid url as a parameter. Try again please.'})
     }
 
   })
