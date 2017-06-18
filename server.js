@@ -12,8 +12,10 @@ db.once('open', function() {
   console.log('we have lift off')
 });
 
+
 var app = express();
 var port = config.PORT;
+var host = "https://guarded-mountain-81492.herokuapp.com"
 app.use(express.static(__dirname + '/public'));
 
 app.engine('.hbs', hbs({extname: '.hbs', defaultLayout: 'main'}));
@@ -40,7 +42,7 @@ app.get('/new/*', function(req, res, next) {
             return res.status(500).json({message: err})
           }
           else {
-            return res.status(201).json({item: item})
+            return res.status(201).json({url: host+'/'+uniqueNumber})
           }
 
         })
